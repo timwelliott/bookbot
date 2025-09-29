@@ -19,6 +19,6 @@ def get_num_from_dict(data: dict) -> int:
 
 def create_sorted_list_of_dicts(data: dict) -> list:
     """Convert a dictionary to a sorted list of dictionaries with 'char' and 'num' keys."""
-    list_of_dicts = [{"char": data[char], "num": data[num]} for char, num in data]
-    list_of_dicts  = sorted( list_of_dicts, key=get_num_from_dict reverse=True)
+    list_of_dicts = [{"char": char, "num": num} for char, num in data.items()]
+    list_of_dicts  = sorted(list_of_dicts, key=get_num_from_dict, reverse=True)
     return list_of_dicts
